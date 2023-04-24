@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr  2 14:02:19 2023
+
+@author: Maringire
+"""
+
+<hml>
+    <head>
+        <title>ESP32 data test page </title>
+    </head>
+            <body>
+            <iframe name="konka" src="/polls/message/" title="messaging frame" width="100%" height="75px" style="boarder: 1px solid black;" onload="clearInput()"></iframe>
+                <form action ="/polls/testPost" method= "POST" id = "dataform" onkeyup= "autoSubmit()" target="konka">
+                    {%csrf_token%}
+                    <input type= "text" name="finger_id" id="test1" placeholder="enter test data here"></input>
+                    <input type="submit" value="checkData"></input>
+                </form>
+                <script>
+                    function autoSubmit(){
+                             if(document.getElementById("test1").value.length >= 1){
+                            document.getElementbyId("dataform").submit();
+                            
+                            }
+                    }
+                </script>
+                <script>
+                    function clearInput(){
+                        var putValue = document.getElementById("test1");
+                        if(putValue.value !=""){
+                        putValue.value="";}
+                        
+                        }
+                  </script>
+            </body>
+</html>
+    
+        
+        
+        

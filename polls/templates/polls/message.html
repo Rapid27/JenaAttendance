@@ -1,0 +1,63 @@
+{%load static %}
+{%if start_message %}
+
+<html>
+<head></head>
+<body style="background-color: green;">
+
+<h2 style="text-align: center;">{{start_message}}<h2>
+<audio autoplay>
+    <source src="{%static 'events/audios/success.mp3'%}" type="audio/mp3">
+    <source src="{%static 'events/audios/success.wav'%}" type="audio/wav">
+Your Browser Does not support the Audio Element
+</audio>
+<h5 style="text-align: center;">Number of Checked in Members:{{attended}}</h5>
+</body>
+</html>
+{%endif%}
+
+{%if success_message %}
+<html>
+<head></head>
+<body style="background-color: green;">
+<h2 style="text-align: center;">{{success_message}}<h2>
+<audio autoplay>
+    <source src="{%static 'events/audios/success.mp3'%}" type="audio/mp3">
+    <source src="{%static 'events/audios/success.wav'%}" type="audio/wav">
+Your Browser Does not support the Audio Element
+</audio>
+<h5 style="text-align: center;">Number of Checked in Members:{{attended}}</h5>
+</body>
+</html>
+{%endif%}
+
+{%if failure_message %}
+<html>
+<head></head>
+<body style="background-color: red;">
+
+<h2 style="text-align: center;">{{failure_message}}<h2>
+<audio autoplay>
+    <source src="{%static 'events/audios/error.mp3'%}" type="audio/mp3">
+    <source src="{%static 'events/audios/error.wav'%}" type="audio/wav">
+Your Browser Does not support the Audio Element
+</audio>
+<h5 style="text-align: center;">Number of Checked in Members:{{attended}}</h5>
+</body>
+</html>
+{%endif%}
+
+{%if null_message %}
+<html>
+<head></head>
+<body style="background-color: red;">
+<h2 style="text-align: center;">{{null_message}}<h2>
+<audio autoplay>
+    <source src="{%static 'events/audios/error.mp3'%}" type="audio/mp3">
+    <source src="{%static 'events/audios/error.wav'%}" type="audio/wav">
+Your Browser Does not support the Audio Element
+</audio>
+<h5 style="text-align: center;">Number of Checked in Members:{{attended}}</h5>
+</body>
+</html>
+{%endif%}

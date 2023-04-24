@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Mar 31 22:50:30 2023
+
+@author: Maringire
+"""
+
+{% extends "polls/__base.html" %}
+
+{% block container %}
+<table class="table">
+    <tr>
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Department</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col"> Mine Number</th>
+                <th scope="col">Entry Time</th>
+                <th scope="col">Exit Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{employee.Jena_Employee.name}}</td>
+                <td>{{employee.Jena_Employee.surname}}</td>
+                <td>{{employee.Jena_Employee.Department}}</td>
+                <td>{{employee.Jena_Employee.phone_number}}</td>
+                <td>{{employee.Jena_Employee.mine_number}}</td>
+                <td>{{employee.entry_time}}</td>
+                {% if employee.exit_time is Null %}
+                <td>--</td>
+                {%else%}
+                <td> {{employee.exit_time}}</td>
+                {%endif%}
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+{% if is_paginated %}
+    {% include "polls/_pagination.html" %}
+{% endif %}
+
+{% endblock %}
